@@ -2,6 +2,50 @@
 
 This is an updated version of the app defined in [this tutorial](https://www.howtographql.com/graphql-elixir/1-getting-started/)
 
+## How to run this
+
+1. Have the latest version of Elixir, Erlang, Phoenix, Postgres installed
+2. Clone this project and within it run `mix deps.get`
+3. Ensure that the db config is correct in config/dev.exs
+4. Run `mix ecto.create` to create the db and `mix ecto.setup`
+5. Run `iex -S mix phx.server`
+6. Navigate to `localhost:4000/graphiql` in your browser
+7. Sample query:
+
+```
+query {
+  allLinks {
+    id
+    url
+    description
+  }
+}
+```
+
+Returns all links in db
+
+8. Sample create mutation:
+
+```
+mutation {
+  createLink(description:"nisarga's site", url:"nisarga.io") {
+		id
+    url
+    description
+  }
+}
+```
+
+9. Sample delete mutation
+
+```
+mutation {
+  deleteLink(id: "1") {
+    id
+  }
+}
+```
+
 How this was created:
 
 ## Creation
