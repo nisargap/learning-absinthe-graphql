@@ -29,7 +29,7 @@ Returns all links in db
 ```
 mutation {
   createLink(description:"nisarga's site", url:"nisarga.io") {
-		id
+	  id
     url
     description
   }
